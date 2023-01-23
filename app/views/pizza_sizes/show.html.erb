@@ -1,0 +1,12 @@
+<h1>Pizza Sizes</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @pizza_size.name %></dd>
+  <dt>Size:</dt>
+  <dd><%= @pizza_size.p_size %></dd>
+  <dt>Basic price:</dt>
+  <dd><%= @pizza_size.basic_price %></dd>
+</dl>
+<%= link_to 'Edit', edit_pizza_size_path(@pizza_size) %> |
+<%= link_to 'Back', pizza_sizes_path %>

@@ -1,0 +1,45 @@
+<h1>Ingredients Prices</h1>
+
+<%= form_tag ingredients_prices_path, :method => 'get' do %>
+  <%= hidden_field_tag :direction, params[:direction]%>
+  <%= hidden_field_tag :sort, params[:sort]%>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<table class="table table-striped table-hover table-sm">
+  <thead>
+    <tr>
+      <th scope="col"><%= sortable "name", "Name" %> </th>
+      <th scope="col"><%= sortable "cheese_price", "Cheese price" %> </th>
+      <th scope="col"><%= sortable "ham_price", "Ham price" %> </th>
+      <th scope="col"><%= sortable "sauce_price", "Sauce price" %> </th>
+      <th scope="col"><%= sortable "pineapple_price", "Pineapple price" %> </th>
+      <th colspan="3" scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingredients_prices.each do |ingredients_price| %>
+      <tr>
+        <td><%= ingredients_price.name %></td>
+        <td><%= ingredients_price.cheese_price %></td>
+        <td><%= ingredients_price.ham_price %></td>
+        <td><%= ingredients_price.sauce_price %></td>
+        <td><%= ingredients_price.pineapple_price %></td>
+        <td><%= link_to 'Show', ingredients_price %></td>
+        <% if current_user && current_user.admin %>
+          <td><%= link_to 'Edit', edit_ingredients_price_path(ingredients_price) %></td>
+          <td><%= link_to 'Destroy', ingredients_price, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if current_user && current_user.admin %>
+  <%= link_to 'New Ingredients Price', new_ingredients_price_path %>
+<% end %>

@@ -1,0 +1,52 @@
+<h1>Pizza Orders</h1>
+
+<%= form_tag pizza_orders_path, :method => 'get' do %>
+  <%= hidden_field_tag :direction, params[:direction]%>
+  <%= hidden_field_tag :sort, params[:sort]%>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<table class="table table-striped table-hover table-sm">
+  <thead>
+    <tr>
+      <th scope="col"><%= sortable "id", "Order id" %> </th>
+      <th scope="col"><%= sortable "total_price", "Total price" %> </th>
+      <th scope="col"><%= sortable "pizza_types.name", "Pizza type" %> </th>
+      <th scope="col"><%= sortable "pizza_sizes.name", "Pizza size" %> </th>
+      <th scope="col"><%= sortable "adresses.name", "Adress" %> </th>
+      <th scope="col"><%= sortable "pizzeria_points.name", "Pizzeria point" %> </th>
+      <th scope="col"><%= sortable "date_of_order", "Completed" %> </th>
+      <th colspan="3" scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pizza_orders.each do |pizza_order| %>
+      <tr>
+        <td><%= pizza_order.id %></td>
+        <td><%= pizza_order.total_price %></td>
+        <td><%= pizza_order.pizza_type.name %></td>
+        <td><%= pizza_order.pizza_size.name %></td>
+        <td><%= pizza_order.adress.name %></td>
+        <td><%= pizza_order.pizzeria_point.name %></td>
+        <td><%= pizza_order.date_of_order %></td>
+        <td><%= link_to 'Show', pizza_order %></td>
+
+        <% if pizza_order.user_id == current_user.id || current_user.admin %>
+          <td><%= link_to 'Edit', edit_pizza_order_path(pizza_order) %></td>
+          <td><%= link_to 'Destroy', pizza_order, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></td>
+        <% end %>
+
+        <% if !pizza_order.date_of_order && current_user.admin %>
+          <td><%= button_to 'Complete', complete_pizza_order_path(pizza_order), method: :put %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Pizza Order', new_pizza_order_path %>

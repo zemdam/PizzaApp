@@ -1,0 +1,10 @@
+<h1>Pizzeria Points</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @pizzeria_point.name %></dd>
+  <dt>Ingredients price:</dt>
+  <dd><%= link_to @pizzeria_point.ingredients_price.name, ingredients_price_path(@pizzeria_point.ingredients_price) %></dd>
+</dl>
+<%= link_to 'Edit', edit_pizzeria_point_path(@pizzeria_point) %> |
+<%= link_to 'Back', pizzeria_points_path %>

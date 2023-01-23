@@ -1,0 +1,16 @@
+<h1>Ingredients Prices</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @ingredients_price.name %></dd>
+  <dt>Cheese price:</dt>
+  <dd><%= @ingredients_price.cheese_price %></dd>
+  <dt>Ham price:</dt>
+  <dd><%= @ingredients_price.ham_price %></dd>
+  <dt>Sauce price:</dt>
+  <dd><%= @ingredients_price.sauce_price %></dd>
+  <dt>Pineapple price:</dt>
+  <dd><%= @ingredients_price.pineapple_price %></dd>
+</dl>
+<%= link_to 'Edit', edit_ingredients_price_path(@ingredients_price) %> |
+<%= link_to 'Back', ingredients_prices_path %>

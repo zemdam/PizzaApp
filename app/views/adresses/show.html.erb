@@ -1,0 +1,14 @@
+<h1>Adresses</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @adress.name %></dd>
+  <dt>Street name:</dt>
+  <dd><%= @adress.street_name %></dd>
+  <dt>Street number:</dt>
+  <dd><%= @adress.street_number %></dd>
+  <dt>City:</dt>
+  <dd><%= @adress.city %></dd>
+</dl>
+<%= link_to 'Edit', edit_adress_path(@adress) %> |
+<%= link_to 'Back', adresses_path %>

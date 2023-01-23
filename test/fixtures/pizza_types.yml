@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  required_cheese: MyString
+  integer: MyString
+  required_sauce: 1
+  required_ham: 1
+  required_pineapple: 1
+
+two:
+  required_cheese: MyString
+  integer: MyString
+  required_sauce: 1
+  required_ham: 1
+  required_pineapple: 1

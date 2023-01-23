@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@pizza_order) do |f| %>
+  <%= errors_for(@pizza_order) %>
+
+  <div class="form-inputs">
+    <%= f.input :ingredients_multiplayer %>
+    <%= f.association :pizza_type %>
+    <%= f.association :pizza_size %>
+    <%= f.association :adress, collection: current_user.adresses %>
+    <%= f.association :pizzeria_point %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn-primary' %>
+  </div>
+<% end %>

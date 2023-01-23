@@ -1,0 +1,16 @@
+<h1>Pizza Types</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @pizza_type.name %></dd>
+  <dt>Required cheese:</dt>
+  <dd><%= @pizza_type.required_cheese %></dd>
+  <dt>Required sauce:</dt>
+  <dd><%= @pizza_type.required_sauce %></dd>
+  <dt>Required ham:</dt>
+  <dd><%= @pizza_type.required_ham %></dd>
+  <dt>Required pineapple:</dt>
+  <dd><%= @pizza_type.required_pineapple %></dd>
+</dl>
+<%= link_to 'Edit', edit_pizza_type_path(@pizza_type) %> |
+<%= link_to 'Back', pizza_types_path %>

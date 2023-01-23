@@ -1,0 +1,18 @@
+<h1>Storages</h1>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @storage.name %></dd>
+  <dt>Available cheese:</dt>
+  <dd><%= @storage.available_cheese %></dd>
+  <dt>Available ham:</dt>
+  <dd><%= @storage.available_ham %></dd>
+  <dt>Available sauce:</dt>
+  <dd><%= @storage.available_sauce %></dd>
+  <dt>Available pineapple:</dt>
+  <dd><%= @storage.available_pineapple %></dd>
+  <dt>Pizzeria point:</dt>
+  <dd><%= link_to @storage.pizzeria_point.name, pizzeria_points_path(@storage.pizzeria_point) %></dd>
+</dl>
+<%= link_to 'Edit', edit_storage_path(@storage) %> |
+<%= link_to 'Back', storages_path %>

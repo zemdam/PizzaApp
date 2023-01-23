@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total_price: 1
+  ingredients_multiplayer: 1
+  date_of_order: 2023-01-21 17:12:00
+  pizza_type: one
+  pizza_size: one
+  pizzeria_point: MyString
+  references: MyString
+  client: one
+  adress: one
+
+two:
+  total_price: 1
+  ingredients_multiplayer: 1
+  date_of_order: 2023-01-21 17:12:00
+  pizza_type: two
+  pizza_size: two
+  pizzeria_point: MyString
+  references: MyString
+  client: two
+  adress: two

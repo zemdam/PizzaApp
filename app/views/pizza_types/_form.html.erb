@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@pizza_type) do |f| %>
+  <%= errors_for(@pizza_type) %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :required_cheese %>
+    <%= f.input :required_sauce %>
+    <%= f.input :required_ham %>
+    <%= f.input :required_pineapple %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn-primary' %>
+  </div>
+<% end %>

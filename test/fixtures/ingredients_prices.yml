@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cheese_price: 1
+  ham_price: 1
+  sauce_price: 1
+  pineapple_price: 1
+
+two:
+  cheese_price: 1
+  ham_price: 1
+  sauce_price: 1
+  pineapple_price: 1

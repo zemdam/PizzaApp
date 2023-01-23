@@ -1,0 +1,18 @@
+<h1>Pizza Orders</h1>
+
+<dl>
+  <dt>Ingredients multiplayer:</dt>
+  <dd><%= @pizza_order.ingredients_multiplayer %></dd>
+  <dt>Total price:</dt>
+  <dd><%= @pizza_order.total_price %></dd>
+  <dt>Pizza type:</dt>
+  <dd><%= link_to @pizza_order.pizza_type.name, pizza_type_path(@pizza_order.pizza_type) %></dd>
+  <dt>Pizza size:</dt>
+  <dd><%= link_to @pizza_order.pizza_size.name, pizza_size_path(@pizza_order.pizza_size) %></dd>
+  <dt>Adress:</dt>
+  <dd><%= link_to @pizza_order.adress.name, adress_path(@pizza_order.adress) %></dd>
+  <dt>Pizzeria point:</dt>
+  <dd><%= link_to @pizza_order.pizzeria_point.name, pizzeria_point_path(@pizza_order.pizzeria_point) %></dd>
+</dl>
+<%= link_to 'Edit', edit_pizza_order_path(@pizza_order) %> |
+<%= link_to 'Back', pizza_orders_path %>

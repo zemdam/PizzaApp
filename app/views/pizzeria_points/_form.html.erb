@@ -1,0 +1,13 @@
+
+<%= simple_form_for(@pizzeria_point) do |f| %>
+  <%= errors_for(@pizzeria_point) %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.association :ingredients_price %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn-primary' %>
+  </div>
+<% end %>

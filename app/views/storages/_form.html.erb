@@ -1,0 +1,17 @@
+
+<%= simple_form_for(@storage) do |f| %>
+  <%= errors_for(@storage) %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :available_cheese %>
+    <%= f.input :available_ham %>
+    <%= f.input :available_sauce %>
+    <%= f.input :available_pineapple %>
+    <%= f.association :pizzeria_point %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn-primary' %>
+  </div>
+<% end %>
