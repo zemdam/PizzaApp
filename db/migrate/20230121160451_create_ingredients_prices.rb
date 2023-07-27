@@ -8,6 +8,6 @@ class CreateIngredientsPrices < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_index :ingredients_prices, [:cheese_price, :ham_price, :sauce_price, :pineapple_price], unique: true
+    add_index :ingredients_prices, [:cheese_price, :ham_price, :sauce_price, :pineapple_price], unique: true, name: "prices_index"
   end
 end

@@ -9,6 +9,6 @@ class CreatePizzaTypes < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_index :pizza_types, [:required_cheese, :required_sauce, :required_ham, :required_pineapple], unique: true
+    add_index :pizza_types, [:required_cheese, :required_sauce, :required_ham, :required_pineapple], unique: true, name: "required_ingredients"
   end
 end

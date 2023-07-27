@@ -3,6 +3,7 @@ class CreatePizzaSizes < ActiveRecord::Migration[7.0]
     create_table :pizza_sizes do |t|
       t.integer :p_size, null: false
       t.integer :basic_price, null: false
+      t.string :name, null: false
 
       t.timestamps
     end
