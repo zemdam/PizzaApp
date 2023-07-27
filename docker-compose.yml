@@ -1,7 +1,7 @@
 version: "3"
 services:
   pizza_app:
-    build: .
+    build: ./App
     ports:
       - "4000:4000"
     depends_on:
