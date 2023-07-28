@@ -5,7 +5,7 @@ class AdressesController < ApplicationController
   before_action :isUnsued, only: %i[ update destroy ]
 
   def correct_user
-    redirect_to adresses_path, notice: 'Not your adress.' if @adress.user != current_user
+    redirect_to adresses_path, notice: 'Not your adress.' if @adress.user != current_user && !current_user.admin
   end
 
   def isUnsued
